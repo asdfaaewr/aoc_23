@@ -23,4 +23,4 @@ for i, line in enumerate(data):
     p += math.prod(d.values())
 
 print(t)
-print(p)
+print(p) 
