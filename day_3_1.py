@@ -11,7 +11,6 @@ for r in range(len(data)):
     while c < len(data[0]):
         num, flag = '', False
         while c < len(data[0]) and data[r][c].isdigit():
-            print(r, c, t)
             num += data[r][c]
             for x, y in moves:
                 if 0 <= r + x < len(data) and 0 <= c + y < len(data[0]):
