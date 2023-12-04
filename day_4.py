@@ -14,12 +14,11 @@ for i, line in enumerate(data):
     
     w, a = (set(re.findall('\\d+', x)) for x in line.split(': ')[1].split(' | '))
 
-    d[i+1] += 1
-
     p = len(a.intersection(w)) 
     if p >= 1:
          t += 2**(p-1)
 
+    d[i+1] += 1
     for idx in range(p):
         d[2+idx+i] += d[i+1]
 
