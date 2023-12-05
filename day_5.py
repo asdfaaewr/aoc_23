@@ -8,7 +8,6 @@ with open('in_' + str(day) + '.txt') as file:
 seeds = re.findall('\\d+', data[0])
 
 ds = []
-
 for i, block in enumerate(data[1:]):
     d = {}
     for line in block.splitlines()[1:]:
@@ -35,16 +34,6 @@ print(min([comb_funs(int(seed), ds) for seed in seeds]))
 # Part 2:
 
 seeds = [(int(a), int(a)+int(b)-1) for a,b in zip(seeds[::2], seeds[1::2])]
-
-ds = []
-
-for i, block in enumerate(data[1:]):
-    d = {}
-    for line in block.splitlines()[1:]:
-        dest, source, length = list(map(int, line.split()))
-        d[(source, source+length-1)] = dest - source
-    ds.append(d)    
-   
    
 for i in range(len(ds)):
     new_seeds = []
