@@ -12,15 +12,15 @@ for i, block in enumerate(data[1:]):
     d = {}
     for line in block.splitlines()[1:]:
         dest, source, length = list(map(int, line.split()))
-        d[range(source, source+length)] = dest-source
-
+        d[(source, source+length-1)] = dest - source
     ds.append(d)    
-
+    
+    
 # Part 1: 
 
 def f(k, d):
     for key in d.keys():
-        if k in key:
+        if key[0] <= k <= key[1]:
             return k + d[key]
     return k
 
