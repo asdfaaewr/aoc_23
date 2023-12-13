@@ -41,7 +41,6 @@ t = 0
 block_nr = 0
 
 for block in data:
-    #print(t)
     block = block.splitlines()
     block_t = [''.join([*x]) for x in zip(*block)]
     block_nr += 1
@@ -72,6 +71,5 @@ for block in data:
                 if block_ct[i-l:i][::-1] == block_ct[i:i+l] and (block_nr, 'c', i) not in d:
                     t += i
                     break
-
 
 print(t//2)
